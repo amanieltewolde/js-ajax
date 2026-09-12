@@ -25,6 +25,23 @@ const bodyEl = document.querySelector('body');
 const ul = document.createElement('ul');
 bodyEl.append(ul);
 
+// creazione bottone per ottenere nuovi dati
+const btn = document.createElement('button');
+btn.innerText = 'Se spammare queste non ti basta, CLICCAMI!'
+bodyEl.appendChild(btn)
+
+btn.addEventListener('click', function () {
+    // svuotare la lista attuale
+    ul.innerHTML = '';
+
+    // ripopolare la lista con nuovi dati ottenuti dal server
+    let i= 0
+while (i < 10) {
+    getEmail()
+    i++
+}
+
+}) 
 
 // generare fino a 10 email randomiche in UI
 let i= 0
